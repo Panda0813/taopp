@@ -1,0 +1,135 @@
+增加电影
+POST  http://127.0.0.1:8000/movies
+减少电影
+DELETE  http://127.0.0.1:8000/movies
+修改电影信息
+PUT  http://127.0.0.1:8000/movies
+
+接口：
+GET  http://127.0.0.1:8000/movies
+参数：
+    1、
+    flag 
+        0:所有
+        1:热映   
+        2:即将上映
+    2、
+    flag 
+        0:所有
+        1:热映   
+        2:即将上映
+    limit 获取数量
+    3、
+    flag 
+        0:所有
+        1:热映   
+        2:即将上映
+    sort 排序
+    order 升序降序
+    4、
+    flag 
+        0:所有
+        1:热映   
+        2:即将上映
+    sort 排序
+    order 升序降序
+    limit 获取数量
+    orderby 排序字段
+    limit 获取数量
+    page 页号
+    city 城市名
+    region 区域名
+GET  http://127.0.0.1:8000/movies?flag=1
+GET  http://127.0.0.1:8000/movies?flag=2
+
+
+
+获取部分影院信息(排序)
+GET  http://127.0.0.1:8000/cinemas?city=&sort=&orderby=&limit=
+获取所有影院信息(排序)
+GET  http://127.0.0.1:8000/cinemas?city=&sort=&orderby=
+
+
+
+4、增加影院
+POST  http://127.0.0.1:8000/cinemas
+5、减少影院
+DELETE  http://127.0.0.1:8000/cinemas
+6、修改影院信息
+PUT  http://127.0.0.1:8000/cinemas
+
+
+获取所在城市的区县信息
+GET  http://127.0.0.1:8000/areas?city=
+获取所有影院信息
+GET  http://127.0.0.1:8000/cinemas
+分页获取影院信息
+POST  http://127.0.0.1:8000/cinemas?city=&area=&page=&count=
+
+
+7、增加影厅&
+POST  http://127.0.0.1:8000/halls
+8、减少影厅&
+DELETE  http://127.0.0.1:8000/halls
+9、修改影厅信息&
+PUT  http://127.0.0.1:8000/halls
+
+
+
+
+
+10、增加排期
+POST  http://127.0.0.1:8000/hallschedulings
+11、减少排期
+DELETE  http://127.0.0.1:8000/hallschedulings
+12、修改排期
+PUT  http://127.0.0.1:8000/hallschedulings
+
+
+
+排期信息
+GET  http://127.0.0.1:8000/hallschedulings?cinemaID=1&movieID=213747&playDate=1
+当前影院排期的所有电影信息
+GET  http://127.0.0.1:8000/movies?cinemaID=
+
+
+10、增加座位
+POST  http://127.0.0.1:8000/seats
+11、减少座位
+DELETE  http://127.0.0.1:8000/seats
+12、修改座位
+PUT  http://127.0.0.1:8000/seats
+
+
+
+当前排期座位信息
+GET  http://127.0.0.1:8000/seats?hsID=&
+
+
+
+
+下订单(锁定座位)
+POST  http://127.0.0.1:8000/orders
+    电影id
+    影院id
+    影厅id
+    影厅排期id
+    座位id(多个)
+
+    票数
+    票价
+
+
+
+
+    
+付款
+取票
+退票
+订单超时未支付
+
+
+
+
+
+4个影院  20影厅   每个影厅排期五场  100个排期   600座位
